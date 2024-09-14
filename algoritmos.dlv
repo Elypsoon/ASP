@@ -1,0 +1,34 @@
+%Máximo común divisor (euclides).
+
+% mcd(X, Y, MCD) :- Y>X, mcd(Y, X, MCD).
+% mcd(X, Y, MCD) :- #mod(X, Y, Z), Z!=0, mcd(Y, Z, MCD), #int(X), #int(Y), #int(Z).
+% mcd(X, Y, Y) :- #mod(X, Y, Z), Z==0, #int(X), #int(Y), #int(Z).
+
+%Sucesión
+g(1,1).
+g(N, R) :- N>0, #prec(N, N1), f(N1, Rp), R = Rp + 2, #int(N), #int(R).
+
+f(1,1).
+f(N, R) :- N>0, #prec(N, N1), f(N1, Rp), g(N, Rpg), R = Rp + Rpg, #int(N), #int(R).
+
+% pinta(X,azul) v pinta(X,rojo) v pinta(X, verde) :- edo(X).
+
+% :-pinta(X, Colorx), pinta(Y, Colorx), X<>Y, colinda(X,Y).
+
+% colinda(pue, oax).
+% colinda(pue, gue).
+% colinda(pue, ver).
+% colinda(pue, tla).
+% colinda(gue, oax).
+% colinda(sin, gue).
+% colinda(pue, cdmx).
+% colinda(pue, hgp).
+
+
+% edo(X) :- colinda(X,_).
+% edo(X) :- colinda(_,X).
+
+
+% 1 { color(1,1..n) } 1 :- edo(X).
+
+% :- colinda(X,Y), color(X,C), color(Y,C).

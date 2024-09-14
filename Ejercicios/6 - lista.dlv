@@ -1,0 +1,6 @@
+%Pares de enteros que sean la suma de algún número
+
+%Hecho inicial
+pares(0,0,0).
+
+pares(R, X, Y) :- R = X + Y, #int(X), #int(Y), X<=Y.

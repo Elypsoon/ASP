@@ -1,0 +1,14 @@
+%15/08/2024
+
+leal(arturo, X) :- cab_mesa_red(X).
+cab_mesa_red(lanzarote).
+liado(lanzarote, ginebra).
+desleal(Y, X) :- casado(X, Y), liado(Z,Y).
+casado(arturo, ginebra).
+
+campeon(arturo, X) :- cab_mesa_red(X), vence_ene(X,Y).
+vence_ene(lanzarote,paco).
+
+%Solo con clingo
+%#show desleal/2.
+%#show campeon/2.

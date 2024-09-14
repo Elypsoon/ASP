@@ -1,0 +1,11 @@
+%Función que multiplica 2 números con sumas sucesivas recursivas
+
+% Multiplicar cualquier número por 0 da 0
+multiplicar(X, 0, 0) :- #int(X), X=0.
+
+% Multiplicar cualquier número por 1 da el mismo número
+multiplicar(X, 1, X) :- #int(X), X>0.
+
+% Multiplicar X por Y sumando X repetidamente Y veces
+multiplicar(X, Y, Resultado) :- Y>1, #prec(Y, Y1), multiplicar(X, Y1, R1), Resultado = R1 + X, #int(X), #int(Y), #int(Resultado).
+

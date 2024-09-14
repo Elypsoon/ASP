@@ -1,0 +1,24 @@
+%Suma de los costos de un grafo según los arcos
+
+%Definir el rango de los enteros, para no especificar -N
+#maxint = 10000.
+
+%Definir los arcos del grafo con sus costos
+% Definir los arcos del grafo con sus costos
+arc(a, b, 12).
+arc(a, c, 2).
+arc(b, c, 22).
+arc(c, b, 9).
+arc(c, d, 17).
+arc(d, e, 14).
+arc(d, f, 8).
+arc(f, g, 2).
+arc(g, c, 12).
+arc(b, h, 9).
+arc(h, d, 7).
+arc(h, e, 11).
+
+%La I es necesaria para que la suma también cuente costos duplicados (en diferentes direcciones)
+costo(0) :- #sum{C, I : arc(I, _, C)} = 0.
+
+costo(S) :- S = #sum{C, I : arc(I, _, C)}.

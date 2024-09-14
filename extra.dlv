@@ -1,0 +1,53 @@
+compro(yo,war_of_hormone).
+EstiloA(war_of_hormone).
+EstiloA(kpop). EstiloB(jpop).
+similar(A,B):- EstiloA(A), EstiloB(B).
+interes(X,EstiloB):- compro(X,Song), EstiloA(Song), similar(Song,EstiloB). 
+
+compro(fer,cumbia). 
+EstiloY(cumbia). EstiloZ(salsa). EstiloX(bachata).
+similar(Y,Z):- EstiloY(Y), EstiloZ(Z).
+similar(Y,Z):- EstiloY(Y), EstiloX(Z).
+
+interes(X,EstiloZ):- compro(X,Cumbia), similar(Cumbia,EstiloZ).
+
+%ejercicio
+%clientes
+compro(kei,enrique_iglesias).
+compro(kei,meszmerize).
+compro(pavo28,californication).
+compro(craft,enrique_iglesias).
+compro(leoncold,jota_aragonesa).
+
+%generos
+Estilo(mezmerize,nu_metal).
+Estilo(californication,rock).
+Estilo(enrique_iglesias,latino).
+Estilo(jota_aragonesa,idk).
+
+%similitudes
+similar(rock,nu_metal).
+similar(latino,idk).
+
+%clients like the genres of their albums
+interes(X,Genre) :- compro(X,Album), Estilo(Album, Genre).
+%clients like related genres to the ones they like
+interes(X,Related) :- interes(X,Genre), similar(Genre,Related).
+%next lines are constraints 
+%nobody with those interest is gonna buy his tracks
+:- compro(X,enrique_iglesias), interes(X,nu_metal).
+:- compro(X,enrique_iglesias), interes(X,classical).
+%also ; means OR
+%nobody with good taste ever buys that stuff
+:- interes(X,jota_aragonesa), interes(X,nu_metal).
+%testing!
+:- compro(X,enrique_iglesias), interes(X,nu_metal).
+:- compro(X,enrique_iglesias), interes(X,classical).
+:- interes(X,jota_aragonesa), interes(X,nu_metal).
+
+%20/08/2024
+compro(fer,clasica).
+compro(ana,heaavy).
+nunca_comprara(X, enrique) :- compre(X, clasica).
+nunca_comprara(X, enrique) :- gusta(X, heavy).
+desinteres(X, aragonesa) :- gusta(X, heavy).

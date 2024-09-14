@@ -1,0 +1,4 @@
+%Imprimimos los números del 1 a N
+
+imprime(1).
+imprime(N) :- N>0, #int(N).

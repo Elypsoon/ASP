@@ -1,0 +1,26 @@
+% %Conjuntos
+% universo(1..100). a(20..27). b(10..25).
+
+% %Unión
+% aub(X) :- a(X).
+% aub(X) :- b(X).
+
+% %v es un or exclusivo en este caso
+% %union(X) v nounion(X) :- a(X).
+
+% % hombre(lupe) v mujer(lupe).
+
+% %intersección
+% ayb(X) :- a(X), b(X).
+
+% %Complemento
+% a_comp(X) :- universo(X), not a(X).
+
+% %Diferencia entre a y b
+% a_b(X) :- a(X), not b(X).
+
+% %Diferencia simétrica
+% sim(X) :- aub(X), not ayb(X).
+
+% %Producto cartesiano
+% axb(X,Y) :- a(X), b(Y).

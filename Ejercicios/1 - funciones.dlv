@@ -1,0 +1,13 @@
+% A) definir las funciones
+
+g(1,1).
+g(N, R) :- N>0, #prec(N, N1), g(N1, Rp), R = Rp + 2, #int(N), #int(R).
+
+f(1,1).
+f(N, R) :- N>0, #prec(N, N1), f(N1, Rp), g(N, Rpg), R = Rp + Rpg, #int(N), #int(R).
+
+% B) definimos otra función Z
+
+z(1,R) :- f(1,R).
+z(N, R) :- N>0, #prec(N, N1), f(N, Rp), z(N1, Rz), R = Rp + Rz, #int(N), #int(R).
+

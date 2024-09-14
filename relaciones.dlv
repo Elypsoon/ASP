@@ -1,0 +1,10 @@
+%22/08/2024
+
+alumno(oscar, 170). 
+alumno(pablo, 175).
+alumno(rivaldo, 175).
+%reflexiva.
+reflexiva(X) :- alumno(X,Estatura), Estatura>= Estatura.
+
+%simétrica
+simetrica(X, Y) :- alumno(X,EstX), alumno(Y,EstY), EstX>=EstY, EstY>= EstX, X<>Y.

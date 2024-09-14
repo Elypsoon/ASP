@@ -1,0 +1,17 @@
+% Definir las puertas entre las habitaciones
+puerta(jardin, salon).
+puerta(salon, pasillo).
+puerta(pasillo, bano1).
+puerta(pasillo, dormitorio1).
+puerta(pasillo, dormitorio2).
+puerta(pasillo, dormitorio3).
+puerta(pasillo, cocina).
+puerta(pasillo, exterior).
+puerta(dormitorio1, bano2).
+
+% Definir el movimiento entre habitaciones a través de las puertas
+camino(A, B) :- puerta(A, B).
+camino(A, B) :- puerta(B, A).
+
+% Buscar un camino entre dos nodos conectando otros nodos
+camino(A, B) :- camino(A, C), camino(C, B), A != B.

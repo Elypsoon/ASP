@@ -1,0 +1,12 @@
+%Se considerará que los clientes estarán interesados en todos los estilos de los cuales hayan comprado algún disco
+
+compro(fer,cumbia).
+
+estiloY(cumbia).
+estiloZ(salsa).
+estiloX(bachata).
+
+similar(Y,Z) :- estiloY(Y), estiloZ(Z).
+similar(Y,Z) :- estiloY(Y), estiloX(Z).
+
+interes(X, EstiloZ) :- compro(X, Cumbia), similar(EstiloY,EstiloZ).

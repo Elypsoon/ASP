@@ -1,0 +1,14 @@
+%Extra
+%parejas(X,Y) :- +(X,Y, #maxint), #int(X), #int(Y), X<=Y.
+
+%Extra 2.
+%triple(X,Y,Z) :- *(X,X,X2), *(Y,Y,Y2), *(Z,Z,Z2), +(Y2,Z2,X2), #int(X), #int(Y), #int(Z).
+
+%%Triángulo de pascal
+
+%Factorial
+% fac(0,1).
+% fac(N,R) :- *(N, Fant, R), fac(Fant, Rt), Fant=N-1, #int(N), #int(R), #int(Rt), #int(Fant).
+
+% coefB(N, K, Resul) :- fac(N,Num), fac(K,Fk), Nk=N-K, fac(Nk, FNk), *(FNk, Fk, Den), /(Num, Den, Resul). 
+

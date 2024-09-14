@@ -1,0 +1,8 @@
+%Función recursiva que calcula si un número es par o impar
+
+%Definimos hechos iniciales
+par(0).
+impar(1).
+
+par(N) :- N>0, #prec(N, N1), impar(N1), #int(N).
+impar(N) :- N>1, #prec(N, N1), par(N1), #int(N).

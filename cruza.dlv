@@ -1,0 +1,6 @@
+%Clase del 13/08/2024
+
+cruza_calle :- not -viene_auto.
+%Al quitar esta línea, cambia el resultado.
+viene_auto.
+ 
