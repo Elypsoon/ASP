@@ -1,0 +1,15 @@
+%Programa que cuenta los nodos de un grafo
+
+% Definición de los arcos entre nodos
+arc(a, b).
+arc(a, c).
+arc(b, d).
+arc(c, d).
+arc(d, e).
+
+% Regla para encontrar todos los nodos en el grafo
+nodo(X) :- arc(X, _).
+nodo(Y) :- arc(_, Y).
+
+% Regla para contar los nodos únicos
+nodos_unicos(N) :- N = #count { X : nodo(X) }.

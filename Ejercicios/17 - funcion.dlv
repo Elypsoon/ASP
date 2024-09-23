@@ -1,0 +1,13 @@
+%Predicado recursivo que realiza una función de sumatoria
+
+% Potencia de 2^N
+potencia(0, 1).
+potencia(N, R) :- #prec(N, N1), potencia(N1, R1), R = R1 * 2, #int(N), #int(R).
+
+% Suma recursiva de 2^i * n
+suma(0, N, S) :- S = 2*N, #int(N), #int(S).
+suma(I, N, S) :- N>0, #prec(I,I1), potencia(I1, P), suma(I1, N, S1), T = P*N, S = S1 + T, #int(I), #int(N), #int(S).
+
+% Calcular el resultado total de la fórmula
+resultado(1,2).
+resultado(N, R) :- N>1, potencia(N, P), #prec(N, N1), suma(N1, N, S), R = P * S, #int(N), #int(R).

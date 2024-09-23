@@ -1,0 +1,7 @@
+%Predicado de potencia
+
+% Definimos casos particulares
+potencia(B,0,1) :- B>0, #int(B).
+potencia(B,1,B) :- B>0, #int(B).
+
+potencia(B, E, R) :- E>0, #prec(E, E1), potencia(B, E1, Rp), R = Rp * B, #int(B), #int(E), #int(R).

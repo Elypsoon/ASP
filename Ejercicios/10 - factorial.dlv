@@ -1,0 +1,4 @@
+%Función que realiza el factorial de un número
+
+fac(0,1).
+fac(N,R) :- R=N*Rt, fac(Fant, Rt), #prec(N, Fant), #int(N), #int(R), N>0.

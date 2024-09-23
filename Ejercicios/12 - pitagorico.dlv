@@ -1,0 +1,3 @@
+%Genera tripletas pitagoricas
+
+triple(X,Y,Z) :- *(X,X,X2), *(Y,Y,Y2), *(Z,Z,Z2), +(Y2,Z2,X2), #int(X), #int(Y), #int(Z), Z>0.

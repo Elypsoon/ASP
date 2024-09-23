@@ -1,0 +1,10 @@
+%Hallar el máximo común divisor de dos números
+
+%Definimos casos particulares
+mcd(0,0,0).
+mcd(X, 0, 0) :- #int(X).
+mcd(0, X, 0) :- #int(X).
+
+mcd(X, Y, MCD) :- Y>X, mcd(Y, X, MCD), X>0.
+mcd(X, Y, MCD) :- #mod(X, Y, Z), Z!=0, mcd(Y, Z, MCD), #int(X), #int(Y), #int(Z), X>0.
+mcd(X, Y, Y) :- #mod(X, Y, Z), Z==0, #int(X), #int(Y), #int(Z), X>0.

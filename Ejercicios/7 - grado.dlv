@@ -4,7 +4,6 @@
 #maxint = 10000.
 
 %Definir los arcos del grafo con sus costos
-% Definir los arcos del grafo con sus costos
 arc(a, b, 12).
 arc(a, c, 2).
 arc(b, c, 22).

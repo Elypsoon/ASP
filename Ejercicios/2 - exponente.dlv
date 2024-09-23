@@ -5,4 +5,5 @@ exponente(B,0,1) :- B>0, #int(B).
 exponente(B,1,B) :- B>0, #int(B).
 
 
-exponente(B, E, R) :- E>0, #prec(E, E1), exponente(B, E1, Rp), R = Rp * B, #int(B), #int(E), #int(R).
+exponente(B, E, R) :- E>0, #prec(E, E1), exponente(B, E1, Rp), R = Rp * B, #int(B), #int(E), #int(R). 
+

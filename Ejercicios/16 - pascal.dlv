@@ -1,0 +1,7 @@
+%Programa que realiza el triángulo de pascal
+
+%Primero definimos el factorial|
+fac(0,1).
+fac(N,R) :- R=N*Rt, fac(Fant, Rt), #prec(N, Fant), #int(N), #int(R), N>0.
+
+coefB(N, K, Resul) :- fac(N,Num), fac(K,Fk), Nk=N-K, fac(Nk, FNk), *(FNk, Fk, Den), /(Num, Den, Resul). 
