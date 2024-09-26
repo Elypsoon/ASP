@@ -1,9 +1,12 @@
-%Algorimo mejorado para el problema de las n reinas
-#const n = 12.
+% Gutierrez Pacheco Ángel de Jesús Elvis
+% Algorimo mejorado para el problema de las n reinas (Clingo)
+
+#const n = 16. % Cantidad de filas y columnas del tablero, hace lo mismo que poner -const n=12 en la terminal
 row(1..n).
 col(1..n).
 
 % Aseguramos que cada fila tiene exactamente una reina, y se asignan las columnas directamente
+% Esta es la parte que se mejora, ya que se asignan las columnas directamente, algo parecido a lo que se hizo em DLV
 1 { queen(I,J) : col(J) } 1 :- row(I).
 
 % Aseguramos que haya exactamente n reinas en el tablero
