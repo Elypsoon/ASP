@@ -1,0 +1,21 @@
+%Empleados
+ 
+empleado(juan). empleado(pedro). empleado(maria). empleado(stella).
+
+%Dividir los empleados en dos grupos para los proyectos
+assig(X, p1) v assig(X, p2) :- empleado(X).
+
+materia(pedro, juan).
+
+%No pueden tener la misma materia
+:~ assig(X, P), assig(Y, P), materia(X, Y). [:2]
+
+casados(juan, maria).
+
+%No pueden estar casados
+:~ assig(X, P), assig(Y, P), casados(X, Y). [:1]
+
+conoce(juan, fernando).
+
+%Se deben conocer
+:~ assig(X, P), assig(Y, P), not conoce(X, Y), X<>Y. [:1]

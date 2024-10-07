@@ -1,0 +1,12 @@
+%Agente viajero
+
+inPath(X, Y) v outPath(X, Y) :- arc(X, Y, C).
+
+:- inPath(X, Y), inPath(X, Y1), Y <> Y1.
+:- inPath(X, Y), inPath(X1, Y), X <> X1.
+:- node(X), not reached(X).
+
+reached(X) :- start(X).
+reached(X) :- reached(Y), inPath(Y, X).
+
+:~ inPath(X, Y), arc(X, Y, C). [C:]

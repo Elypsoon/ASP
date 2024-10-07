@@ -1,10 +1,10 @@
 % Relaciones en la familia Rodríguez
 
-% Definición de personas: persona(Nombre, Edad, Peso, Altura)
+% Definición de personas: persona (Nombre, Edad, Peso, Altura)
 persona(alfonso, 42, 77, 180).
 persona(beatriz, 40, 57, 168).
 persona(carlos, 19, 61, 188).
-persona(david, 17, 61, 163).
+persona(david, 17, 66, 163).
 persona(elena, 15, 48, 153).
 
 % Definición de relación padre e hijo
