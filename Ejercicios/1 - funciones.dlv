@@ -1,5 +1,7 @@
 % A) definir las funciones
 
+% Cuando escribes -N=4 en DLV, lo que haces es definir un rango de valores para N, va desde 0 hasta N (en este caso 4)
+% Con #int(N) en DLV, lo que haces es indicar que N es un entero que tomará valores dichos en la consola con -N=X
 g(1,1).
 g(N, R) :- N>0, #prec(N, N1), g(N1, Rp), R = Rp + 2, #int(N), #int(R).
 
