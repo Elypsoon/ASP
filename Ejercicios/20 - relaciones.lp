@@ -37,3 +37,10 @@ equivalencia(X, Y) :- persona(X, _, W, _), persona(Y, _, W, _), X != Y.
 
 % Relación de orden parcial: en base a la edad
 orden_parcial(X, Y) :- persona(X, E1, _, _), persona(Y, E2, _, _), E1 >= E2, X != Y.
+
+#show reflexiva/1.
+#show simetrica/2.
+#show antisimetrica/2.
+#show transitiva/2.
+#show equivalencia/2.
+#show orden_parcial/2.
